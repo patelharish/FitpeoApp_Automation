@@ -23,7 +23,7 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.23.0</version>
 		</dependency>
-
+       <!-- WebDriverManager to manage WebDriver versions automatically -->
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>

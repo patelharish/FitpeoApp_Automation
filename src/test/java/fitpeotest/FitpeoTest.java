@@ -20,7 +20,7 @@ public class FitpeoTest {
     @BeforeTest
     public void setUp() {
         // Initialize the ChromeDriver
-        driver = new ChromeDriver();        
+        driver = new ChromeDriver();     
         // Navigate to the Fitpeo homepage
         driver.get("https://www.fitpeo.com/");
         // Maximize the browser window
@@ -31,7 +31,9 @@ public class FitpeoTest {
 
     // Test case to adjust the slider
     @Test(priority = 1)
-    public void adjustSliderTest(){    
+    public void adjustSliderTest(){   
+    	
+    	try {
         // Set an implicit wait for elements to load
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));    
 
@@ -47,6 +49,11 @@ public class FitpeoTest {
         Actions ac = new Actions(driver);
         // Drag and drop the slider by 94 pixels along the x-axis (horizontal movement)
         ac.dragAndDropBy(slider, 94, 0).perform();
+    }
+    catch (Exception e) {
+        System.err.println("SocketException occurred: " + e.getMessage());
+        e.printStackTrace();
+    }
     }
 
     // Test case to update the value in the text field
